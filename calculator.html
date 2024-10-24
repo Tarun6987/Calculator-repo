@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <link rel="stylesheet" href="/calculator.css">
+</head>
+
+<body>
+  <section id="main">
+    <input type="text" id="display">
+    <button id='_2' class="btn" onclick="addnum('1')">1</button>
+    <button id='_3' class="btn" onclick="addnum('2')">2</button>
+    <button id='_4' class="btn" onclick="addnum('3')">3</button>
+    <button id='_1' class="btn operator" onclick="addnum('+')">+</button>
+  
+    <button id='_6' class="btn" onclick="addnum('4')">4</button>
+    <button id='_7' class="btn" onclick="addnum('5')">5</button>
+    <button id='_8' class="btn" onclick="addnum('6')">6</button>
+    <button id='_5' class="btn operator" onclick="addnum('-')">-</button>
+  
+    <button id='_0' class="btn" onclick="addnum('7')">7</button>
+    <button id='_+' class="btn" onclick="addnum('8')">8</button>
+    <button id='_-' class="btn" onclick="addnum('9')">9</button>
+    <button id='_9' class="btn operator" onclick="addnum('*')">*</button>
+  
+    <button id='_/' class="btn" onclick="addnum('0')">0</button>
+    <button id='_%' class="btn" onclick="addnum('%')">%</button>
+    <button id='_=' class="btn operator" onclick="calculate()">=</button>
+    <button id='_*' class="btn operator" onclick="addnum('/')">/</button>
+  
+    <button id='_clear' class="btn" onclick="cleardisplay()">C</button>
+  </section>
+  
+  </section>
+  <script>
+    const display = document.getElementById('display');
+    function addnum(i) {
+      display.value += i;
+    }
+
+    // clear 
+    function cleardisplay() {
+      display.value = "";
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      }
+      catch (Error) {
+        display.value = 'SyntaxError';
+      }
+    }
+  </script>
+</body>
+
+</html>
